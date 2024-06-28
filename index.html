@@ -1,0 +1,115 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+             #GRADIENT {
+                margin: 0;
+                padding: 0;
+                width:100%;
+                height: 100vh;
+                position: relative;
+                background: linear-gradient( to right,red,yellow);
+
+            }
+            div {
+            
+                font-size: 30px;
+                margin: 50px;
+                padding: 30px;
+                display: block;
+                justify-content: center;
+                text-align: center;
+                position: absolute;
+                top: 10%;
+            }
+
+            h2 {
+                font-size: larger;
+            }
+        </style>
+        
+    </head>
+    <body id="GRADIENT">
+        <DIV>
+        <h1>BACKGROUND GRADIENT GENERATOR</h1>
+        <h2> PICK THE COLOR</h2>
+        <input type="color" id="color1" value="#fffff">
+        <input type="color" id="color2" value="color">
+        <select id="gradient-type">
+        <option value="to right">To Right</option>
+        <option value="to left">To Left</option>
+        <option value="to top">To Top</option>
+        <option value="to bottom">To Bottom</option>
+        <option value="45deg">45deg</option>
+        <option value="radial">Radial</option>
+        <option value="conic">Conic</option>
+        <option value="repeating-linear">Repeating Linear</option>
+    </select>
+    </DIV>
+    <script>
+        const color1 = document.getElementById('color1');
+        const colortwo = document.getElementById('color2');
+        const GRADIENT = document.getElementById('GRADIENT');
+        const gradientType = document.getElementById('gradient-type');
+
+        color1.addEventListener('input', function(){
+            switch (gradientType.value) {
+                case 'radial':
+                    GRADIENT.style.background = `radial-gradient(${color1.value}, ${color2.value})`
+                    break;
+                case 'conic':
+                    GRADIENT.style.background = `conic-gradient(from 0deg, ${color1.value}, ${color2.value})`
+                    break;
+                case 'repeating-linear':
+                    GRADIENT.style.background = `repeating-linear-gradient(${gradientType.value}, ${color1.value}, ${color2.value})`
+                    break;
+                default:
+                    GRADIENT.style.background = `linear-gradient(${gradientType.value}, ${color1.value}, ${color2.value})`
+            }
+        });
+        color2.addEventListener('input', function(){
+            switch (gradientType.value) {
+                case 'radial':
+                    GRADIENT.style.background = `radial-gradient(${color1.value}, ${color2.value})`
+                    break;
+                case 'conic':
+                    GRADIENT.style.background = `conic-gradient(from 0deg, ${color1.value}, ${color2.value})`
+                    break;
+                case 'repeating-linear':
+                    GRADIENT.style.background = `repeating-linear-gradient(${gradientType.value}, ${color1.value}, ${color2.value})`
+                    break;
+                default:
+                    GRADIENT.style.background = `linear-gradient(${gradientType.value}, ${color1.value}, ${color2.value})`
+            }
+        });
+        gradientType.addEventListener('input', function(){
+            switch (gradientType.value) {
+                case 'radial':
+                    GRADIENT.style.background = `radial-gradient(${color1.value}, ${color2.value})`
+                    break;
+                case 'conic':
+                    GRADIENT.style.background = `conic-gradient(from 0deg, ${color1.value}, ${color2.value})`
+                    break;
+                case 'repeating-linear':
+                    GRADIENT.style.background = `repeating-linear-gradient(${gradientType.value}, ${color1.value}, ${color2.value})`
+                    break;
+                default:
+                    GRADIENT.style.background = `linear-gradient(${gradientType.value}, ${color1.value}, ${color2.value})`
+            }
+        });
+
+        
+
+    </script>
+
+        
+    </body>
+    </html>
+
+
+
+
+
